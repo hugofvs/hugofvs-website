@@ -2,6 +2,7 @@
     import "../app.css";
     import { onMount } from "svelte";
     import { afterNavigate } from '$app/navigation';
+    import { page } from '$app/stores';
     import Header from '$lib/components/Header.svelte'
     import Footer from '$lib/components/Footer.svelte'
     import { initLightRayCanvas } from '$lib/utils/lightRayCanvas';
@@ -9,11 +10,31 @@
 	import { initTheme, setupThemeToggle } from '$lib/utils/theme';
 	import gsap from 'gsap';
 
+	let prefersReducedMotion = false;
+
 	let canvas: HTMLCanvasElement;
 	let cursorElement: HTMLDivElement;
 	let cursor: Cursor | null = null;
 
+	// Custom transition that combines fade with blur
+	function fadeBlur(node: HTMLElement, { duration = 250 }) {
+		return {
+			duration,
+			css: (t: number) => {
+				const opacity = t;
+				const blur = (1 - t) * 4; // 4px max blur
+				return `
+					opacity: ${opacity};
+					filter: blur(${blur}px);
+				`;
+			}
+		};
+	}
+
 	onMount(() => {
+		// Check for reduced motion preference
+		prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 		// Initialize theme
 		initTheme();
 
@@ -34,7 +55,7 @@
 		});
 
 		// Animate shiny text if motion is not reduced
-		if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		if (!prefersReducedMotion) {
 			gsap.fromTo(
 				'.shiny',
 				{ backgroundPosition: '120% 0%' },
@@ -66,6 +87,10 @@
 
 <Header />
 <main>
-    <slot />
+	{#key $page.url.pathname}
+		<div in:fadeBlur={{ duration: prefersReducedMotion ? 0 : 250 }}>
+			<slot />
+		</div>
+	{/key}
 </main>
 <Footer />
