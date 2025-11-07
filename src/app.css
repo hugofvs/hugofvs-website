@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
+/* design tokens */
+@theme {
+    /* Colors */
+    --color-darkInk: #0B0C10;
+    --color-darkSlate: #E0E0E0;
+    --color-highlight: #BB5500;
+    --color-lightInk: #FAFAFA;
+    --color-lightSlate: #1A1A1A;
+    --color-shine: #F5A623;
+    --color-focus: #22D3EE;
+
+    /* Fonts */
+    --font-ui: "Inter", "Roboto", "Helvetica", "Arial", "sans-serif";
+    --font-grotesk: "Space Grotesk", "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "Segoe UI", sans-serif;
+
+    /* Spacing & Sizing */
+    --tracking-hero: -0.01em;
+    --max-width-narrow: 1100px;
+}
+
+/* custom variant: replaces addVariant(...) */
+@custom-variant synthetic-hover (&.is-hovered, .is-hovered &);
+
+
+:root {
+    --lightSlate: #1A1A1A;
+    --darkSlate: #E0E0E0;
+    --shine: #F5A623;
+    --cursor-border: var(--lightSlate);
+    --shine-base: var(--lightSlate);
+    --shine-width: 12%; /* Width of the shine gradient highlight */
+}
+
+/* Light mode: cursor border uses shine color when not in hot state */
+:root:not(.dark.cursor-hot) {
+    --cursor-border: var(--shine);
+}
+
+/* Light mode: icon uses shine color when target is not hovered */
+:root:not(.dark .target.is-hovered) {
+    --icon-color: var(--shine);
+}
+
+/* Default icon color for light mode targets */
+.target {
+    --icon-color: var(--lightSlate);
+}
+
+/* Dark mode overrides */
+.dark {
+    --cursor-border: var(--darkSlate);
+    --shine-base: var(--darkSlate);
+    --icon-color: var(--darkSlate);
+}
+
+.dark .target {
+    --icon-color: var(--darkSlate);
+}
+
+/* Apply icon color from CSS variables */
+.icon {
+    color: var(--icon-color);
+}
+
+body {
+    cursor: none;
+}
+
+/* Restore cursor for print */
+@media print {
+    body {
+        cursor: auto;
+    }
+}
+
+/* Canvas for light ray effect */
+#light-ray-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+/* Custom cursor element - 12px diameter circle that follows the pointer */
+.cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--cursor-border);
+    border-radius: 50px;
+    box-sizing: border-box;
+    pointer-events: none;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+    will-change: transform; /* Optimize animation performance */
+}
+
+/* Shiny text gradient effect - animated background gradient with text clipping */
+.shiny {
+    display: inline-block;
+    background-image: linear-gradient(90deg,
+            var(--shine-base) 0%,
+            var(--shine-base) calc(50% - var(--shine-width)),
+            var(--shine) 50%,
+            var(--shine-base) calc(50% + var(--shine-width)),
+            var(--shine-base) 100%);
+    background-size: 200% 100%;
+    background-position: 120% 0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    white-space: nowrap;
+    will-change: background-position; /* Optimize animation performance */
+}
