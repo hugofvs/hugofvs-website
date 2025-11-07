@@ -1,6 +1,7 @@
 <script lang="ts">
     import "../app.css";
     import { onMount } from "svelte";
+    import { afterNavigate } from '$app/navigation';
     import Header from '$lib/components/Header.svelte'
     import Footer from '$lib/components/Footer.svelte'
     import { initLightRayCanvas } from '$lib/utils/lightRayCanvas';
@@ -10,6 +11,7 @@
 
 	let canvas: HTMLCanvasElement;
 	let cursorElement: HTMLDivElement;
+	let cursor: Cursor | null = null;
 
 	onMount(() => {
 		// Initialize theme
@@ -24,7 +26,7 @@
 		const lightRay = initLightRayCanvas(canvas, getColorUniform);
 
 		// Initialize cursor
-		const cursor = new Cursor(cursorElement);
+		cursor = new Cursor(cursorElement);
 
 		// Setup theme toggle
 		setupThemeToggle((isDark) => {
@@ -49,6 +51,13 @@
 		return () => {
 			lightRay.destroy();
 		};
+	});
+
+	// Refresh cursor targets after navigation
+	afterNavigate(() => {
+		if (cursor) {
+			cursor.refreshTargets();
+		}
 	});
 </script>
 
