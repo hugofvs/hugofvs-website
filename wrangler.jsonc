@@ -1,5 +1,5 @@
 {
-	"name": "hugofvs-deploy-worker",
+	"name": "hugofvs-website",
 	"main": ".svelte-kit/cloudflare/_worker.js",
 	"compatibility_date": "2025-11-09",
 	"assets": {
