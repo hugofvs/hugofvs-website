@@ -11,18 +11,6 @@
         <span class="block mt-3">Systems Thinker.</span>
         <span class="block mt-3">Occasional Worldbuilder.</span>
     </h1>
-
-    <div class="mt-10 md:mt-12 flex flex-wrap gap-4">
-        <a
-            href="mailto:hello@hugofvs.com"
-            class="target text-lightSlate dark:text-darkSlate py-3 md:py-3.5 text-base md:text-lg font-medium inline-flex items-center justify-center border-0"
-        >
-            <span
-                class="text relative select-none shiny synthetic-hover:text-highlight"
-                >Get in touch</span
-            >
-        </a>
-    </div>
 </section>
 
 <section class="max-w-7xl mx-auto px-6 md:px-8 pb-28 md:pb-36">
@@ -148,4 +136,21 @@
             {/each}
         </ul>
     {/if}
+</section>
+
+<section class="max-w-7xl mx-auto px-6 md:px-8 pb-10 md:pb-10">
+    <div
+        class="gap-4 pt-8 md:pt-10 border-t border-lightSlate/[0.07] dark:border-darkSlate/[0.07]"
+    >
+        <a
+            href="mailto:hello@hugofvs.com"
+            class="target text-lightSlate dark:text-darkSlate inline-flex"
+        >
+            <span
+                class="text relative select-none font-grotesk text-xl md:text-2xl font-medium shiny synthetic-hover:text-highlight"
+            >
+                Get in touch.
+            </span>
+        </a>
+    </div>
 </section>
