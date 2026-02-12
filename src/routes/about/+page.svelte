@@ -1,7 +1,11 @@
 <section class="max-w-7xl mx-auto px-6 md:px-8 pt-6 md:pt-16 pb-20 md:pb-28">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
         <div class="md:col-span-1">
-            <img src="/images/me.jpeg" alt="Hugo Silva" class="rounded-xl w-full" />
+            <img
+                src="/images/me.jpeg"
+                alt="Hugo Silva"
+                class="rounded-xl w-full"
+            />
         </div>
         <div class="md:col-span-2">
             <h1 class="font-grotesk text-3xl mb-6">About me</h1>
@@ -16,8 +20,8 @@
                 I started coding at 12. My first project was a game, with
                 SpongeBob chasing dots like Pac-Man while “The Real Slim Shady”
                 played on loop for no good reason. When it finally ran and I
-                could play something I had built from scratch, something
-                clicked, and I went from user to builder.
+                could play it, something clicked, and I went from user to
+                builder.
             </p>
 
             <p class="font-ui text-lg mb-4">
