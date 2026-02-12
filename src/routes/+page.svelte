@@ -3,9 +3,11 @@
     import { spotlight } from "$lib/utils/spotlight";
 </script>
 
-<section class="max-w-7xl mx-auto px-6 md:px-8 pt-6 md:pt-16 pb-20 md:pb-28">
+<section
+    class="min-h-[80svh] flex flex-col justify-start max-w-7xl mx-auto px-6 md:px-8 pt-12 md:pt-20 pb-16"
+>
     <h1
-        class="tracking-hero text-3xl sm:text-6xl md:text-7xl lg:text-[85px] lg:leading-[1.2] xl:text-[96px] font-grotesk font-bold"
+        class="tracking-hero text-5xl leading-[1.2] sm:text-6xl md:text-7xl lg:text-[85px] xl:text-[96px] font-grotesk font-bold"
     >
         <span class="block">Software Engineer.</span>
         <span class="block mt-3">Systems Thinker.</span>

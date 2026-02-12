@@ -9,7 +9,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Cracel Type Foundry",
+    name: "Cracel Type",
     description:
       "Cracel Type is a Lisbon-based type foundry website presenting original typefaces, detailed specimen previews, and brand narrative through a clean, typography-driven design.",
     year: 2024,

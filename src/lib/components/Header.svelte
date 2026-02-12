@@ -280,7 +280,7 @@ z"
             </svg>
         </a>
 
-        <nav aria-label="Primary" class="hidden sm:block">
+        <nav aria-label="Primary">
             <ul class="flex items-center gap-8">
                 <li>
                     <a
