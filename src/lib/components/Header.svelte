@@ -1,16 +1,22 @@
 <header class="w-full">
-	<div class="max-w-narrow mx-auto px-6 md:px-8 py-6 md:py-8 flex items-center justify-between">
-		<a
-			href="/"
-			class="flex text-lightSlate dark:text-darkSlate text-lg md:text-xl font-semibold tracking-tight focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-3 transition-colors"
-			aria-label="Home"
-		>
-			<svg class="h-auto w-24 inline-block" viewBox="0 200 1024 600" aria-hidden="true">
-				<path
-					fill="currentColor"
-					opacity="1.000000"
-					stroke="none"
-					d="
+    <div
+        class="max-w-7xl mx-auto px-6 md:px-8 py-6 md:py-8 flex items-center justify-between"
+    >
+        <a
+            href="/"
+            class="flex text-lightSlate dark:text-darkSlate text-lg md:text-xl font-semibold tracking-tight focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-3 transition-colors"
+            aria-label="Home"
+        >
+            <svg
+                class="h-auto w-24 inline-block"
+                viewBox="0 200 1024 600"
+                aria-hidden="true"
+            >
+                <path
+                    fill="currentColor"
+                    opacity="1.000000"
+                    stroke="none"
+                    d="
 M409.794922,741.750610
 	C395.515381,761.649353 379.796387,779.620056 359.428467,793.052124
 	C351.675720,798.164673 343.366608,801.737488 334.149719,803.106384
@@ -210,12 +216,12 @@ M440.417542,528.843384
 	C474.385590,485.291901 472.083710,487.009033 469.950073,488.840302
 	C457.254852,499.736694 447.614624,512.924683 440.417542,528.843384
 z"
-				/>
-				<path
-					fill="currentColor"
-					opacity="1.000000"
-					stroke="none"
-					d="
+                />
+                <path
+                    fill="currentColor"
+                    opacity="1.000000"
+                    stroke="none"
+                    d="
 M827.937622,499.073853
 	C837.278015,509.289581 846.460327,519.171082 855.454041,529.221436
 	C861.955322,536.486572 866.016968,545.119446 866.769592,554.797607
@@ -246,12 +252,12 @@ M827.937622,499.073853
 	C811.027100,470.659149 810.810120,475.680176 815.422119,483.742249
 	C818.676636,489.431274 823.246399,494.081390 827.937622,499.073853
 z"
-				/>
-				<path
-					fill="currentColor"
-					opacity="1.000000"
-					stroke="none"
-					d="
+                />
+                <path
+                    fill="currentColor"
+                    opacity="1.000000"
+                    stroke="none"
+                    d="
 M658.810547,633.632507
 	C675.463867,631.760437 691.733582,631.204590 708.009399,630.584961
 	C719.816101,630.135498 731.624695,629.298340 743.426392,629.900513
@@ -270,50 +276,53 @@ M658.810547,633.632507
 	C592.953125,642.373413 616.592346,637.865234 640.564819,635.605408
 	C646.502686,635.045715 652.422852,634.299011 658.810547,633.632507
 z"
-				/>
-			</svg>
-		</a>
+                />
+            </svg>
+        </a>
 
-		<nav aria-label="Primary" class="hidden sm:block">
-			<ul class="flex items-center gap-8">
-				<li>
-					<a
-						class="target text-lightSlate dark:text-darkSlate inline-flex items-center justify-center border-0 py-2 synthetic-hover:text-highlight"
-						href="/about"
-					>
-						<span class="text relative select-none">About</span>
-					</a>
-				</li>
-				<li>
-					<button id="theme-toggle" class="target py-2 text-lightSlate dark:text-darkSlate inline-flex items-center justify-center border-0">
-						<span class="text relative select-none">
-							<svg
-								id="icon-moon"
-								xmlns="http://www.w3.org/2000/svg"
-								class="h-5 w-5 icon hidden"
-								fill="currentColor"
-								viewBox="0 0 256 256"
-							>
-								<path
-									d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
-								></path>
-							</svg>
+        <nav aria-label="Primary" class="hidden sm:block">
+            <ul class="flex items-center gap-8">
+                <li>
+                    <a
+                        class="target text-lightSlate dark:text-darkSlate inline-flex items-center justify-center border-0 py-2 synthetic-hover:text-highlight"
+                        href="/about"
+                    >
+                        <span class="text relative select-none">About</span>
+                    </a>
+                </li>
+                <li>
+                    <button
+                        id="theme-toggle"
+                        class="target py-2 text-lightSlate dark:text-darkSlate inline-flex items-center justify-center border-0"
+                    >
+                        <span class="text relative select-none">
+                            <svg
+                                id="icon-moon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 icon hidden"
+                                fill="currentColor"
+                                viewBox="0 0 256 256"
+                            >
+                                <path
+                                    d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
+                                ></path>
+                            </svg>
 
-							<svg
-								id="icon-sun"
-								xmlns="http://www.w3.org/2000/svg"
-								class="h-5 w-5 icon hidden"
-								fill="currentColor"
-								viewBox="0 0 256 256"
-							>
-								<path
-									d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"
-								></path>
-							</svg>
-						</span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
+                            <svg
+                                id="icon-sun"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 icon hidden"
+                                fill="currentColor"
+                                viewBox="0 0 256 256"
+                            >
+                                <path
+                                    d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"
+                                ></path>
+                            </svg>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </header>
