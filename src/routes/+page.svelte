@@ -15,10 +15,8 @@
     </h1>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 md:px-8 pb-28 md:pb-36">
-    <h2
-        class="font-ui text-xs uppercase tracking-widest text-lightSlate/40 dark:text-darkSlate/40 mb-8"
-    >
+<section id="projects" class="max-w-7xl mx-auto px-6 md:px-8 pb-28 md:pb-36">
+    <h2 class="font-ui text-xs uppercase tracking-widest text-highlight dark:text-shine mb-8">
         Projects
     </h2>
 
@@ -29,13 +27,13 @@
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card group relative flex flex-col sm:flex-row rounded-2xl overflow-hidden border border-lightSlate/[0.07] dark:border-darkSlate/[0.07] hover:border-lightSlate/20 dark:hover:border-darkSlate/20 transition-colors duration-200"
+            class="project-card group relative flex flex-col sm:flex-row rounded-2xl overflow-hidden border border-shine/[0.2] dark:border-shine/[0.12] hover:border-shine/[0.45] dark:hover:border-shine/[0.3] transition-colors duration-200"
         >
             <div class="spotlight" aria-hidden="true"></div>
 
             <!-- Image -->
             <div
-                class="relative aspect-[3/2] sm:w-2/5 shrink-0 overflow-hidden bg-lightSlate/[0.04] dark:bg-darkSlate/[0.04]"
+                class="relative aspect-[3/2] sm:w-2/5 shrink-0 overflow-hidden bg-shine/[0.06] dark:bg-shine/[0.08]"
             >
                 <img
                     src={project.image}
@@ -55,7 +53,7 @@
                         {project.name}
                     </span>
                     <p
-                        class="font-ui text-base text-lightSlate/50 dark:text-darkSlate/50 mt-2 leading-relaxed"
+                        class="font-ui text-base text-lightSlate/80 dark:text-darkSlate/80 mt-2 leading-relaxed"
                     >
                         {project.description}
                     </p>
@@ -63,12 +61,12 @@
 
                 <div class="flex items-center justify-between">
                     <span
-                        class="font-ui text-xs tabular-nums text-lightSlate/30 dark:text-darkSlate/30"
+                        class="font-ui text-xs tabular-nums text-lightSlate/60 dark:text-darkSlate/60"
                     >
                         {project.year}
                     </span>
                     <span
-                        class="font-ui text-sm text-lightSlate/30 dark:text-darkSlate/30 group-hover:text-highlight transition-colors duration-200"
+                        class="font-ui text-sm text-lightSlate/60 dark:text-darkSlate/60 group-hover:text-highlight transition-colors duration-200"
                     >
                         {project.urlLabel} ↗
                     </span>
@@ -86,13 +84,13 @@
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="project-card group relative flex flex-col rounded-2xl overflow-hidden border border-lightSlate/[0.07] dark:border-darkSlate/[0.07] hover:border-lightSlate/20 dark:hover:border-darkSlate/20 transition-colors duration-200"
+                        class="project-card group relative flex flex-col h-full rounded-2xl overflow-hidden border border-shine/[0.2] dark:border-shine/[0.12] hover:border-shine/[0.45] dark:hover:border-shine/[0.3] transition-colors duration-200"
                     >
                         <div class="spotlight" aria-hidden="true"></div>
 
                         <!-- Image -->
                         <div
-                            class="relative aspect-[3/2] overflow-hidden bg-lightSlate/[0.04] dark:bg-darkSlate/[0.04]"
+                            class="relative aspect-[3/2] overflow-hidden bg-shine/[0.06] dark:bg-shine/[0.08]"
                         >
                             <img
                                 src={project.image}
@@ -102,34 +100,30 @@
                         </div>
 
                         <!-- Content -->
-                        <div
-                            class="relative flex items-start justify-between gap-4 px-5 py-4"
-                        >
-                            <div class="min-w-0">
+                        <div class="relative flex flex-col flex-1 px-5 py-4">
+                            <div class="flex-1">
                                 <span
-                                    class="block font-grotesk text-base font-medium text-lightSlate dark:text-darkSlate group-hover:text-highlight transition-colors duration-200 truncate"
+                                    class="block font-grotesk text-base font-medium text-lightSlate dark:text-darkSlate group-hover:text-highlight transition-colors duration-200"
                                 >
                                     {project.name}
                                 </span>
                                 <p
-                                    class="font-ui text-sm text-lightSlate/50 dark:text-darkSlate/50 mt-0.5 line-clamp-2 leading-relaxed"
+                                    class="font-ui text-sm text-lightSlate/80 dark:text-darkSlate/80 mt-1 leading-relaxed"
                                 >
                                     {project.description}
                                 </p>
                             </div>
 
-                            <div
-                                class="flex flex-col items-end shrink-0 gap-1 pt-0.5"
-                            >
+                            <div class="flex items-center justify-between mt-4">
                                 <span
-                                    class="font-ui text-sm text-lightSlate/30 dark:text-darkSlate/30 group-hover:text-highlight transition-colors duration-200"
-                                >
-                                    ↗
-                                </span>
-                                <span
-                                    class="font-ui text-xs tabular-nums text-lightSlate/30 dark:text-darkSlate/30"
+                                    class="font-ui text-xs tabular-nums text-lightSlate/60 dark:text-darkSlate/60"
                                 >
                                     {project.year}
+                                </span>
+                                <span
+                                    class="font-ui text-sm text-lightSlate/60 dark:text-darkSlate/60 group-hover:text-highlight transition-colors duration-200"
+                                >
+                                    {project.urlLabel} ↗
                                 </span>
                             </div>
                         </div>

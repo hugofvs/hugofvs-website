@@ -5,17 +5,19 @@
 /* design tokens */
 @theme {
     /* Colors */
-    --color-darkInk: #0B0C10;
-    --color-darkSlate: #E0E0E0;
-    --color-highlight: #BB5500;
-    --color-lightInk: #FAFAFA;
-    --color-lightSlate: #1A1A1A;
-    --color-shine: #F5A623;
-    --color-focus: #22D3EE;
+    --color-darkInk: #0b0c10;
+    --color-darkSlate: #e0e0e0;
+    --color-highlight: #bb5500;
+    --color-lightInk: #fafafa;
+    --color-lightSlate: #1a1a1a;
+    --color-shine: #f5a623;
+    --color-focus: #22d3ee;
 
     /* Fonts */
     --font-ui: "Inter", "Roboto", "Helvetica", "Arial", "sans-serif";
-    --font-grotesk: "Space Grotesk", "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "Segoe UI", sans-serif;
+    --font-grotesk:
+        "Space Grotesk", "SF Pro Display", "-apple-system",
+        "BlinkMacSystemFont", "Segoe UI", sans-serif;
 
     /* Spacing & Sizing */
     --tracking-hero: -0.01em;
@@ -25,11 +27,10 @@
 /* custom variant: replaces addVariant(...) */
 @custom-variant synthetic-hover (&.is-hovered, .is-hovered &);
 
-
 :root {
-    --lightSlate: #1A1A1A;
-    --darkSlate: #E0E0E0;
-    --shine: #F5A623;
+    --lightSlate: #1a1a1a;
+    --darkSlate: #e0e0e0;
+    --shine: #f5a623;
     --cursor-border: var(--lightSlate);
     --shine-base: var(--lightSlate);
     --shine-width: 12%; /* Width of the shine gradient highlight */
@@ -102,22 +103,42 @@ body {
 
 /* Project card spotlight: radial glow that tracks cursor position via --sx / --sy */
 :root {
-    --spotlight-color: rgba(245, 166, 35, 0.07); /* shine amber, light mode */
+    --spotlight-color: rgba(245, 166, 35, 0.1); /* shine amber, light mode */
 }
 
 .dark {
-    --spotlight-color: rgba(224, 224, 224, 0.05); /* darkSlate white, dark mode */
+    --spotlight-color: rgba(245, 166, 35, 0.08); /* shine amber, dark mode */
 }
 
 .project-card {
     --sx: -200px;
     --sy: -200px;
+    background-color: rgba(
+        250,
+        250,
+        250,
+        0.82
+    ); /* lightInk/82% — lets light rays through */
+}
+
+.dark .project-card {
+    background-color: rgba(
+        11,
+        12,
+        16,
+        0.65
+    ); /* darkInk/82% — lets light rays through */
 }
 
 .project-card .spotlight {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle 180px at var(--sx) var(--sy), var(--spotlight-color), transparent 70%);
+    z-index: 1;
+    background: radial-gradient(
+        circle 180px at var(--sx) var(--sy),
+        var(--spotlight-color),
+        transparent 70%
+    );
     opacity: 0;
     transition: opacity 300ms ease;
     pointer-events: none;
@@ -130,12 +151,14 @@ body {
 /* Shiny text gradient effect - animated background gradient with text clipping */
 .shiny {
     display: inline-block;
-    background-image: linear-gradient(90deg,
-            var(--shine-base) 0%,
-            var(--shine-base) calc(50% - var(--shine-width)),
-            var(--shine) 50%,
-            var(--shine-base) calc(50% + var(--shine-width)),
-            var(--shine-base) 100%);
+    background-image: linear-gradient(
+        90deg,
+        var(--shine-base) 0%,
+        var(--shine-base) calc(50% - var(--shine-width)),
+        var(--shine) 50%,
+        var(--shine-base) calc(50% + var(--shine-width)),
+        var(--shine-base) 100%
+    );
     background-size: 200% 100%;
     background-position: 120% 0%;
     -webkit-background-clip: text;

@@ -285,6 +285,14 @@ z"
                 <li>
                     <a
                         class="target text-lightSlate dark:text-darkSlate inline-flex items-center justify-center border-0 py-2 synthetic-hover:text-highlight"
+                        href="/#projects"
+                    >
+                        <span class="text relative select-none">Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="target text-lightSlate dark:text-darkSlate inline-flex items-center justify-center border-0 py-2 synthetic-hover:text-highlight"
                         href="/about"
                     >
                         <span class="text relative select-none">About</span>
