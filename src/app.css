@@ -100,6 +100,33 @@ body {
     will-change: transform; /* Optimize animation performance */
 }
 
+/* Project card spotlight: radial glow that tracks cursor position via --sx / --sy */
+:root {
+    --spotlight-color: rgba(245, 166, 35, 0.07); /* shine amber, light mode */
+}
+
+.dark {
+    --spotlight-color: rgba(224, 224, 224, 0.05); /* darkSlate white, dark mode */
+}
+
+.project-card {
+    --sx: -200px;
+    --sy: -200px;
+}
+
+.project-card .spotlight {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle 180px at var(--sx) var(--sy), var(--spotlight-color), transparent 70%);
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+}
+
+.project-card:hover .spotlight {
+    opacity: 1;
+}
+
 /* Shiny text gradient effect - animated background gradient with text clipping */
 .shiny {
     display: inline-block;

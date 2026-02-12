@@ -1,5 +1,6 @@
 <script lang="ts">
     import { projects } from '$lib/data/projects';
+    import { spotlight } from '$lib/utils/spotlight';
 </script>
 
 <section class="max-w-narrow mx-auto px-6 md:px-8 pt-6 md:pt-16 pb-20 md:pb-28">
@@ -28,24 +29,27 @@
         {#each projects as project}
             <li>
                 <a
+                    use:spotlight
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="target group flex flex-col rounded-2xl overflow-hidden border border-lightSlate/[0.07] dark:border-darkSlate/[0.07] synthetic-hover:border-lightSlate/20 dark:synthetic-hover:border-darkSlate/20 transition-colors duration-200"
+                    class="project-card group relative flex flex-col rounded-2xl overflow-hidden border border-lightSlate/[0.07] dark:border-darkSlate/[0.07] hover:border-lightSlate/20 dark:hover:border-darkSlate/20 transition-colors duration-200"
                 >
+                    <div class="spotlight" aria-hidden="true"></div>
+
                     <!-- Image -->
-                    <div class="aspect-[3/2] overflow-hidden bg-lightSlate/[0.04] dark:bg-darkSlate/[0.04]">
+                    <div class="relative aspect-[3/2] overflow-hidden bg-lightSlate/[0.04] dark:bg-darkSlate/[0.04]">
                         <img
                             src={project.image}
                             alt={project.name}
-                            class="w-full h-full object-cover transition-transform duration-500 synthetic-hover:scale-[1.03]"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         />
                     </div>
 
                     <!-- Content -->
-                    <div class="flex items-start justify-between gap-4 px-5 py-4">
+                    <div class="relative flex items-start justify-between gap-4 px-5 py-4">
                         <div class="min-w-0">
-                            <span class="text relative select-none block font-grotesk text-base font-medium text-lightSlate dark:text-darkSlate synthetic-hover:text-highlight transition-colors duration-200 truncate">
+                            <span class="block font-grotesk text-base font-medium text-lightSlate dark:text-darkSlate group-hover:text-highlight transition-colors duration-200 truncate">
                                 {project.name}
                             </span>
                             <p class="font-ui text-sm text-lightSlate/50 dark:text-darkSlate/50 mt-0.5 line-clamp-2 leading-relaxed">
@@ -54,7 +58,7 @@
                         </div>
 
                         <div class="flex flex-col items-end shrink-0 gap-1 pt-0.5">
-                            <span class="text relative select-none font-ui text-sm text-lightSlate/30 dark:text-darkSlate/30 synthetic-hover:text-highlight transition-colors duration-200">
+                            <span class="font-ui text-sm text-lightSlate/30 dark:text-darkSlate/30 group-hover:text-highlight transition-colors duration-200">
                                 ↗
                             </span>
                             <span class="font-ui text-xs tabular-nums text-lightSlate/30 dark:text-darkSlate/30">
